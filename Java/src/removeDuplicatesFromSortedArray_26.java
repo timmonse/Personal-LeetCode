@@ -1,4 +1,4 @@
-class Solution {
+class removeDuplicatesFromSortedArray_26 {
     public int removeDuplicates(int[] nums) {
         // Counts the amount of unique numbers
         // Assumes one unique number

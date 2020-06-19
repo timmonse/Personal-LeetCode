@@ -1,4 +1,7 @@
-class Solution {
+import java.util.ArrayList;
+import java.util.List;
+
+class KidsWithTheGreatestNumberOfCandies_1431 {
   public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
 
     ArrayList<Boolean> booleanList = new ArrayList<>();
@@ -10,12 +13,7 @@ class Solution {
     }
 
     for (int candy : candies) {
-      if(candy + extraCandies >= max){
-        booleanList.add(true);
-      }
-      else{
-        booleanList.add(false);
-      }
+      booleanList.add(candy + extraCandies >= max);
     } 
 
     return booleanList;
