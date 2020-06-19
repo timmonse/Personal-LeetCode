@@ -1,4 +1,4 @@
-class rotateArray_189 {
+class RotateArray_189 {
     public static void rotate(int[] nums, int k) {
         int[] result = new int[nums.length];
         int shiftedPosition;

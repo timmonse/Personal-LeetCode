@@ -2,7 +2,7 @@
 * @author Evan Timmons
 */
 
-class maxIncreaseKeepingSkyline_807 {
+class MaxIncreaseKeepingSkyline_807 {
     public int maxIncreaseKeepingSkyline(int[][] grid) {
         
         int gridLength = grid.length;

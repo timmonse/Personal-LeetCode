@@ -3,7 +3,7 @@
 * 10-1-2018
 */
 
-class toLowerCase_709 {
+class ToLowerCase_709 {
     public String toLowerCase(String str) {
         // Simple built in solution
         //str = str.toLowerCase();
