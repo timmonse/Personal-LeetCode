@@ -8,8 +8,6 @@ class rotateArray_189 {
             result[shiftedPosition] = nums[i];
         }
 
-        for (int j = 0; j < nums.length; j++) {
-            nums[j] = result[j];
-        }
+        System.arraycopy(result, 0, nums, 0, nums.length);
     }
 }
