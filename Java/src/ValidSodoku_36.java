@@ -1,53 +1,64 @@
-import java.util.ArrayList;
-
-class Solution {
+class ValidSodoku_36 {
   public boolean isValidSudoku(char[][] board) {
+    boolean[] uniqueNums = new boolean[10];
+    int currNum = 0;
 
-    // Iterate through rows
-    for (int i = 0; i < 9; i++) {
-      ArrayList<Character> list = new ArrayList<>();
-      // Iterate through columns
-      for (int j = 0; j < 9; j++) {
-        if (board[i][j] != '.') {
-          if (list.contains(board[i][j])){
-            return false;
-          }
-          list.add(board[i][j]);
+    // Check the rows
+    for (int row = 0; row < 9; row++){
+      uniqueNums = new boolean[10];
+      for (int col = 0; col < 9; col++) {
+        currNum = board[row][col] != '.' ? board[row][col] - '0' : 0;
+        if (currNum == 0) {
+          continue;
+        }
+        if (uniqueNums[currNum]) {
+          return false;
+        } else {
+          uniqueNums[currNum] = true;
         }
       }
     }
 
-    // Iterate through columns
-    for (int j = 0; j < 9; j++) {
-      ArrayList<Character> list = new ArrayList<>();
-      // Iterate through rows
-      for (int i = 0; i < 9; i++) {
-        if (board[i][j] != '.') {
-          if (list.contains(board[i][j])){
-            return false;
-          }
-          list.add(board[i][j]);
+    uniqueNums = new boolean[10];
+
+    // Check the columns
+    for (int col = 0; col < 9; col++){
+      uniqueNums = new boolean[10];
+      for (int row = 0; row < 9; row++) {
+        currNum = board[row][col] != '.' ? board[row][col] - '0': 0;
+        if (currNum == 0) {
+          continue;
+        }
+        if (uniqueNums[currNum]) {
+          return false;
+        } else {
+          uniqueNums[currNum] = true;
         }
       }
     }
 
-    for (int i = 0; i < 9; i += 3){
-      for (int j = 0; j < 9; j += 3){
-        // Iterate through columns
-        ArrayList<Character> list = new ArrayList<>();
-        for (int c = i; c < i + 3; c++) {
-          // Iterate through rows
-          for (int b = j; b < j + 3; b++) {
-            if (board[c][b] != '.') {
-              if (list.contains(board[c][b])){
-                return false;
-              }
-              list.add(board[c][b]);
+    uniqueNums = new boolean[10];
+
+    // Check the boxes
+    for (int rowStart = 0; rowStart <= 6; rowStart+=3) {
+      for (int colStart = 0; colStart <= 6; colStart+=3) {
+        uniqueNums = new boolean[10];
+        for (int row = rowStart; row < rowStart + 3; row++){
+          for (int col = colStart; col < colStart + 3; col++) {
+            currNum = board[row][col] != '.' ? board[row][col] - '0': 0;
+            if (currNum == 0) {
+              continue;
+            }
+            if (uniqueNums[currNum]) {
+              return false;
+            } else {
+              uniqueNums[currNum] = true;
             }
           }
         }
       }
     }
+
     return true;
   }
 }
