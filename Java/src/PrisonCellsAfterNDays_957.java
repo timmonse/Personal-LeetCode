@@ -1,4 +1,4 @@
-class PrisonCellsAfterNDays_57 {
+class PrisonCellsAfterNDays_957 {
     public int[] prisonAfterNDays(int[] cells, int N) {
         N = (N - 1) % 14 + 1;
         int[] cells2 = new int[8];
