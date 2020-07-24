@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class AllPathsFromSourceToTarget797 {
+class AllPathsFromSourceToTarget_797 {
     List<List<Integer>> main = new ArrayList<>();
 
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
