@@ -21,26 +21,31 @@ public class PalindromeLinkedList_234 {
     }
 
     public boolean isPalindrome(ListNode head) {
-        int count = 0;
-        ListNode pointer = head;
-        List<Integer> list = new ArrayList<>();
 
-        while (pointer != null) {
-            list.add(pointer.val);
-            count++;
-            pointer = pointer.next;
+        ListNode fast = head;
+
+        ListNode prev = null;
+        ListNode node = head;
+        ListNode next = null;
+
+        while ((fast != null) && (fast.next != null)) {
+            fast = fast.next.next;
+
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+
+            //odd
+            if (fast != null && fast.next == null) {
+                next = next.next;
+            }
         }
 
-        count = count / 2;
-        list.subList(0, count).clear();
-        Collections.reverse(list);
-        System.out.println(list.toString());
-
-        for (int num : list) {
-            if (num != head.val) {
-                return false;
-            }
-            head = head.next;
+        while (prev != null && next != null) {
+            if (prev.val != next.val) return false;
+            prev = prev.next;
+            next = next.next;
         }
 
         return true;
