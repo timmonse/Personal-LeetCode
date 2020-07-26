@@ -11,22 +11,19 @@ public class LinkedListCycle_141 {
     }
 
     public boolean hasCycle(ListNode head) {
-        if (head == null) {
-            return false;
+        if (head == null || head.next == null) return false;
+        ListNode slow = head;
+        ListNode fast = head.next.next;
+
+        while (fast != null) {
+            if (slow == fast) {
+                return true;
+            }
+            slow = slow.next;
+            if (fast.next == null) return false;
+            fast = fast.next.next;
         }
 
-        ListNode slow = head;
-        ListNode fast = head;
-
-        do {
-            try {
-                slow = slow.next;
-                fast = fast.next.next;
-            } catch (Exception e) {
-                return false;
-            }
-        } while (slow != fast);
-
-        return true;
+        return false;
     }
 }
