@@ -2,30 +2,22 @@ import java.util.Arrays;
 
 class TaskScheduler_621 {
     public int leastInterval(char[] tasks, int n) {
-        if (n == 0) {
-            return tasks.length;
-        }
+        if (n == 0) return tasks.length;
+        int max = 0;
+        int maxCount = 1;
+        int[] alpha = new int[26];
+        int pos;
 
-        Arrays.sort(tasks);
-        int longestChain = 0;
-        int currentChain = 1;
-        int numLongest = 1;
-
-        for (int i = 1; i < tasks.length; i++) {
-            if (tasks[i - 1] == tasks[i]) {
-                currentChain++;
-            } else {
-                currentChain = 1;
-            }
-            if (currentChain == longestChain) {
-                numLongest++;
-            } else if (currentChain > longestChain) {
-                longestChain = currentChain;
-                numLongest = 0;
+        for (char c : tasks) {
+            pos = c - 'A';
+            alpha[pos]++;
+            if (alpha[pos] == max) maxCount++;
+            if (alpha[pos] > max) {
+                max = alpha[pos];
+                maxCount = 1;
             }
         }
 
-        return longestChain + Math.max((longestChain - 1) * n + numLongest, (tasks.length - longestChain));
-
+        return Math.max((max - 1) * n + max + (maxCount - 1), tasks.length);
     }
 }
