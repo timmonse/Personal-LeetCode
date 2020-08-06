@@ -1,16 +1,20 @@
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class SingleNumber_136 {
     public int singleNumber(int[] nums) {
-        HashSet<Integer> hSet = new HashSet<>();
+        Set<Integer> appeared = new HashSet<>();
 
-        for(int i : nums) {
-            if (hSet.contains(i)) {
-                hSet.remove(i);
+        for (int num : nums) {
+            if (appeared.contains(num)) {
+                appeared.remove(num);
             } else {
-                hSet.add(i);
+                appeared.add(num);
             }
         }
-        return hSet.iterator().next();
+
+        Iterator iter = appeared.iterator();
+        return (int) iter.next();
     }
 }
