@@ -1,29 +1,25 @@
 class ReverseInteger_7 {
     public int reverse(int x) {
-        long result = 0;
-        if (x == 0) {
-            return x;
-        } else if (x < -2147483648 || x > 2147483647) {
-            return 0;
-        }
-
-        Boolean isNegative = x < 0 ? true : false;
-        if (isNegative) {
-            x = x * -1;
-        }
+        long reversed = 0;
+        boolean negative = (x < 0);
+        x = Math.abs(x);
 
         while (x > 0) {
-            result = result * 10;
-            result += x % 10;
+            reversed = reversed * 10;
+            reversed += x % 10;
             x = x / 10;
         }
 
-        result = isNegative ? result * -1 : result;
-
-        if (result < -2147483648 || result > 2147483647) {
-            return 0;
+        if (negative) {
+            reversed = -reversed;
+            if (reversed < Integer.MIN_VALUE) {
+                reversed = 0;
+            }
+        }
+        if (reversed > Integer.MAX_VALUE) {
+            reversed = 0;
         }
 
-        return (int) result;
+        return (int) reversed;
     }
 }
