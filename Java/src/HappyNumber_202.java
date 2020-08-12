@@ -2,28 +2,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class HappyNumber_202 {
+    Set<Integer> seen = new HashSet<>();
     public boolean isHappy(int n) {
-        Set<Integer> seenNums = new HashSet<>();
-        return isOneEnd(seenNums, n);
-    }
+        int result = 0;
+        if (seen.contains(n)) return false; // Will loop
+        seen.add(n);
 
-    boolean isOneEnd(Set<Integer> set, int n) {
-        int newNum = 0;
-        int temp;
         while (n > 0) {
-            temp = n % 10;
-            newNum += temp * temp;
-            n /= 10;
+            result += (n % 10) * (n % 10);
+            n = n / 10;
         }
-        if (set.contains(newNum)) {
-            return false;
-        } else {
-            set.add(newNum);
-        }
-        if (newNum == 1) {
+
+        if (result == 1)
             return true;
-        } else {
-            return isOneEnd(set, newNum);
-        }
+        else
+            return isHappy(result);
     }
 }
