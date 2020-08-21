@@ -1,4 +1,4 @@
-class Solution {
+class StringToInteger_8 {
     public int myAtoi(String str) {
         double result = 0;
         int index;
