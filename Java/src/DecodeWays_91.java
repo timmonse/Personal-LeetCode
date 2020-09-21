@@ -9,7 +9,8 @@ public class DecodeWays_91 {
             if (s.charAt(i-1) - '0' > 0) {
                 dp[i] += dp[i-1];
             }
-            if (Integer.parseInt(s.substring(i-2,i)) <= 26 && Integer.parseInt(s.substring(i-2,i)) >= 10) {
+            int i1 = Integer.parseInt(s.substring(i - 2, i));
+            if (i1 <= 26 && i1 >= 10) {
                 dp[i] += dp[i-2];
             }
         }
