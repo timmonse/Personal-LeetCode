@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+
 public class LongestConsecutiveSequence_128 {
     public int longestConsecutive(int[] nums) {
         HashMap<Integer, List<Integer>> beg = new HashMap<>();
