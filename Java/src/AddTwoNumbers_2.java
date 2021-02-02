@@ -2,12 +2,12 @@ import java.util.List;
 
 /**
  * Definition for singly-linked list.
- * public class ListNode {
+ * public class resources.ListNode {
  * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * resources.ListNode next;
+ * resources.ListNode() {}
+ * resources.ListNode(int val) { this.val = val; }
+ * resources.ListNode(int val, resources.ListNode next) { this.val = val; this.next = next; }
  * }
  */
 class AddTwoNumbers_2 {
@@ -30,14 +30,14 @@ class AddTwoNumbers_2 {
 
     public static void main (String[] args) {
         ListNode l1 = new ListNode(5);
-//        l1.next = new ListNode(5);
-//        l1.next.next = new ListNode(3);
-//        l1.next.next.next = new ListNode(4);
+//        l1.next = new resources.ListNode(5);
+//        l1.next.next = new resources.ListNode(3);
+//        l1.next.next.next = new resources.ListNode(4);
 
         ListNode l2 = new ListNode(5);
-//        l2.next = new ListNode(5);
-//        l2.next.next = new ListNode(3);
-//        l2.next.next.next = new ListNode(4);
+//        l2.next = new resources.ListNode(5);
+//        l2.next.next = new resources.ListNode(3);
+//        l2.next.next.next = new resources.ListNode(4);
 
         ListNode l3 = addTwoNumbers(l1, l2);
 

@@ -1,11 +1,11 @@
 /**
  * Definition for singly-linked list.
- * public class ListNode {
+ * public class resources.ListNode {
  * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * resources.ListNode next;
+ * resources.ListNode() {}
+ * resources.ListNode(int val) { this.val = val; }
+ * resources.ListNode(int val, resources.ListNode next) { this.val = val; this.next = next; }
  * }
  */
 class RemoveNthNodeFromEndOfList_19 {

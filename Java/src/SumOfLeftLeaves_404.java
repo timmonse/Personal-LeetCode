@@ -1,3 +1,5 @@
+import resources.TreeNode;
+
 public class SumOfLeftLeaves_404 {
     public int sumOfLeftLeaves(TreeNode root) {
         return sum(root, false);

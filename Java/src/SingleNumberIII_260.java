@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-class SingleNumberIII {
+class SingleNumberIII_260 {
     public int[] singleNumber(int[] nums) {
         Set<Integer> singleNums = new HashSet<Integer>();
 

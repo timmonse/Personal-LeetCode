@@ -1,3 +1,5 @@
+import resources.ListNode;
+
 public class ReorderList_143 {
     public void reorderList(ListNode head) {
         if (head == null || head.next == null) return;

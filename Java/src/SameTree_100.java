@@ -1,12 +1,12 @@
 /**
  * Definition for a binary tree node.
- * public class TreeNode {
+ * public class resources.TreeNode {
  * int val;
- * TreeNode left;
- * TreeNode right;
- * TreeNode() {}
- * TreeNode(int val) { this.val = val; }
- * TreeNode(int val, TreeNode left, TreeNode right) {
+ * resources.TreeNode left;
+ * resources.TreeNode right;
+ * resources.TreeNode() {}
+ * resources.TreeNode(int val) { this.val = val; }
+ * resources.TreeNode(int val, resources.TreeNode left, resources.TreeNode right) {
  * this.val = val;
  * this.left = left;
  * this.right = right;

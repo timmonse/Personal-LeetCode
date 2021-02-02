@@ -2,10 +2,10 @@ import java.util.List;
 
 /**
  * Definition for singly-linked list.
- * public class ListNode {
+ * public class resources.ListNode {
  * int val;
- * ListNode next;
- * ListNode(int x) { val = x; }
+ * resources.ListNode next;
+ * resources.ListNode(int x) { val = x; }
  * }
  */
 public class DeleteNodeInLinkedList_237 {

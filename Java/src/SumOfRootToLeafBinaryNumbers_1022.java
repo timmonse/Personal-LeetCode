@@ -1,3 +1,5 @@
+import resources.TreeNode;
+
 public class SumOfRootToLeafBinaryNumbers_1022 {
     int sum = 0;
 
